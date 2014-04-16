@@ -11,10 +11,9 @@ except NameError:
 from flask.ext.script import Manager, Shell, Server
 from flask.ext.migrate import MigrateCommand
 
-from {{cookiecutter.app_name}} import create_app
+from {{cookiecutter.app_name}} import create_app, db
 from {{cookiecutter.app_name}}.auth.models import User
 from {{cookiecutter.app_name}}.settings import DevConfig, ProdConfig
-from {{cookiecutter.app_name}} import db
 
 if os.environ.get("{{cookiecutter.app_name | upper}}_ENV") == 'prod':
     app = create_app(ProdConfig)
@@ -38,13 +37,13 @@ def test():
 
 @manager.command
 def createdb():
-    db.create_all()
+    with app.app_context():
+        db.create_all()
 
 @manager.command
 def createuser():
     """Register a new user"""
-    print("Username:")
-    username = input()
+    username = input("Username: ")
     from getpass import getpass
     password = getpass()
     password2 = getpass(prompt='Confirm: ')
