@@ -5,4 +5,4 @@ from . import public
 
 @public.route('/', methods=['GET'])
 def index():
-    render_template('public/index.html')
+    return render_template('public/index.html')

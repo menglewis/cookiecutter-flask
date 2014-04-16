@@ -31,7 +31,11 @@ def register_extensions(app):
 
 def register_blueprints(app):
     from .auth import auth as auth_blueprint
-    app.register_blueprint(auth_blueprint, url_prefix='/auth')
+    app.register_blueprint(auth_blueprint, url_prefix='/accounts')
+
+    from .public import public as public_blueprint
+    app.register_blueprint(public_blueprint)
+
     login_manager.login_view = "auth.login"
 
     return None

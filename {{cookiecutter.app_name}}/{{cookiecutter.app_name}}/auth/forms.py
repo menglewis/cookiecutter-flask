@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from flask import flash
 from flask_wtf import Form
 from wtforms import TextField, PasswordField, BooleanField
 from wtforms.validators import DataRequired, EqualTo, Length
@@ -51,3 +52,10 @@ class RegisterForm(Form):
             return False
         self.user = user
         return True
+
+def flash_form_errors(form, category="warning"):
+    '''Flash all errors for a form.'''
+    for field, errors in form.errors.items():
+        for error in errors:
+            flash("{0} - {1}"
+                    .format(getattr(form, field).label.text, error), category)

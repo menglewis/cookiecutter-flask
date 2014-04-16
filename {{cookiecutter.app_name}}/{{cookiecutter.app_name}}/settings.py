@@ -2,7 +2,7 @@ import os
 
 class Config(object):
     APP_DIR = os.path.abspath(os.path.dirname(__file__))  # This directory
-    DATABASE_URI = 'sqlite://%s' % os.path.join(APP_DIR, 'test.db')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///%s' % os.path.join(APP_DIR, '../test.db')
     DEBUG = True
 
 class ProdConfig(Config):
@@ -16,4 +16,4 @@ class DevConfig(Config):
 
 class TestingConfig(Config):
     SECRET_KEY = 'testsecretkey'
-    DATABASE_URI = 'sqlite://:memory:'
+    SQLALCHEMY_DATABASE_URI = 'sqlite://:memory:'

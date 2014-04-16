@@ -18,13 +18,15 @@
   </div>
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
-
-    {% if not current_user.is_authenticated() %}
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="{{ url_for('auth.login') }}">Login</a></li>
-      <li><a href="{{ url_for('auth.register') }}">Create account</a></li>
-    </ul>
+    {% if not current_user.is_authenticated() %}
+        <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+        <li><a href="{{ url_for('auth.register') }}">Create account</a></li>
+    {% else %}
+        <li><a href="#">Logged in as {{ current_user.username }}</a></li>
+        <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
     {% endif %}
+    </ul>
   </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->
 </nav>
