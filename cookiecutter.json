@@ -1,4 +1,6 @@
 {
     "project_name": "My Flask Project",
-    "app_name": "myflaskapp"
+    "app_name": "myflaskapp",
+    "full_name": "",
+    "year": "2014"
 }

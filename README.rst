@@ -1,7 +1,7 @@
 cookiecutter-flask
 =======================
 
-A cookiecutter_ template for Flask
+A cookiecutter_ template for Flask. This is simply a template that I have found useful in starting a Flask project.
 
 .. _cookiecutter: https://github.com/audreyr/cookiecutter
 
