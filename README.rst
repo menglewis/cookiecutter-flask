@@ -1,4 +1,4 @@
-cookiecutter-django-cms
+cookiecutter-flask
 =======================
 
 A cookiecutter_ template for Flask
@@ -17,7 +17,7 @@ Features
 Usage
 ------
 
-Install Cookiecutter
+Install Cookiecutter::
 
     $ pip install cookiecutter
 
@@ -27,20 +27,20 @@ Now run it against this repo::
 
 You'll be prompted for some questions, answer them, then it will create a Flask project for you.
 
-Enter the directory for the project
+Enter the directory for the project::
 
     $ cd project-name
 
-To get it running locally, start by creating a virtualenv for the project and activating it
+To get it running locally, start by creating a virtualenv for the project and activating it::
 
     $ mkvirtualenv flask-project
 
-Or without using virtualenvwrapper
+Or without using virtualenvwrapper::
 
     $ virtualenv venv
     $ source venv/bin/activate
 
-Install dependencies
+Install dependencies::
 
     $ pip install -r requirements.txt
 
@@ -49,29 +49,29 @@ manage.py
 
 There are various commands available from manage.py
 
-To create the initial database run
+To create the initial database run::
 
     $ python manage.py createdb
 
-To create a user from the command line use the following command and enter a username and password
+To create a user from the command line use the following command and enter a username and password::
 
     $ python manage.py createuser
 
-The python shell loads with the app, db, and User objects in the context
+The python shell loads with the app, db, and User objects in the context::
 
     $ python manage.py shell
 
-To run the development server use runserver
+To run the development server use runserver::
 
     $ python manage.py runserver
 
 Database migrations are handled with the db command
 
-When a database migration needs to be made. Run the following commmands:
+When a database migration needs to be made. Run the following commmands::
 
     $ python manage.py db migrate
 
-This will create a migration script. Then run the following to apply the migration
+This will create a migration script. Then run the following to apply the migration::
 
     $ python manage.py db upgrade
 
