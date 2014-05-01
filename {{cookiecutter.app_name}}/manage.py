@@ -21,7 +21,6 @@ else:
     app = create_app(DevConfig)
 
 manager = Manager(app)
-TEST_CMD = "nosetests"
 
 def _make_context():
     '''Return context dict for a shell session so you can access
@@ -31,9 +30,7 @@ def _make_context():
 
 @manager.command
 def test():
-    '''Run the tests.'''
-    status = subprocess.call(TEST_CMD, shell=True)
-    sys.exit(status)
+    subprocess.call(['nosetests', '-v'])
 
 @manager.command
 def createdb():

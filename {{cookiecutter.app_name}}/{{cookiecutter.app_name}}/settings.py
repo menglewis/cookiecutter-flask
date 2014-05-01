@@ -16,4 +16,5 @@ class DevConfig(Config):
 
 class TestingConfig(Config):
     SECRET_KEY = 'testsecretkey'
-    SQLALCHEMY_DATABASE_URI = 'sqlite://:memory:'
+    SQLALCHEMY_DATABASE_URI = 'sqlite://'
+    WTF_CSRF_ENABLED = False
