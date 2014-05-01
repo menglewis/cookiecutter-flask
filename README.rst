@@ -77,4 +77,7 @@ This will create a migration script. Then run the following to apply the migrati
 
 For a full migration command reference, run ``python manage.py db --help``.
 
+To run the tests, you need to have the test requirements installed and run the management command::
 
+    $ pip install -r requirements/test.txt
+    $ python manage.py test
