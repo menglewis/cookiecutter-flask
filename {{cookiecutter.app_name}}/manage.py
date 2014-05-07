@@ -33,11 +33,6 @@ def test():
     subprocess.call(['nosetests', '-v'])
 
 @manager.command
-def createdb():
-    with app.app_context():
-        db.create_all()
-
-@manager.command
 def createuser():
     """Register a new user"""
     username = input("Username: ")
