@@ -33,8 +33,8 @@ def register_blueprints(app):
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint, url_prefix='/accounts')
 
-    from .public import public as public_blueprint
-    app.register_blueprint(public_blueprint)
+    from .main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
 
     login_manager.login_view = "auth.login"
 

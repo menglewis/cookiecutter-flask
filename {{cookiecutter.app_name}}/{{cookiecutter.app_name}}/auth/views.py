@@ -17,7 +17,7 @@ def login():
         if form.validate_on_submit():
             login_user(form.user, form.remember_me.data)
             flash("You are logged in.", "success")
-            return redirect(request.args.get('next') or url_for('public.index'))
+            return redirect(request.args.get('next') or url_for('main.index'))
         else:
             flash_form_errors(form)
     return render_template('auth/login.html', form=form)
@@ -41,7 +41,7 @@ def register():
             db.session.commit()
             flash('Thank you for registering.', 'success')
             login_user(new_user)
-            return redirect(url_for('public.index'))
+            return redirect(url_for('main.index'))
         else:
             flash_form_errors(form)
     return render_template('auth/register.html', form=form)
